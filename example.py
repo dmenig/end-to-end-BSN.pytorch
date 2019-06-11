@@ -13,7 +13,7 @@ model = BSNNet(
     num_classes=1000,
     sample_duration=sample_duration,
     backbone="inception",
-    learnable_proportion=0.1,
+    learnable_proportion=0.1, # of the feature extractor
     bsp_boundary_ratio=0.2,
 )
 
