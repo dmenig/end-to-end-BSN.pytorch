@@ -52,7 +52,6 @@ def TEM_loss_calc(
         "loss_end": loss_end_small,
         "num_sample_end": num_sample_end_small,
     }
-    # print loss_dict
     return loss_dict
 
 

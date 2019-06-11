@@ -118,7 +118,6 @@ def generateFeature(
     use_gpu=True,
 ):
     temporal_step = 1.0 / temporal_scale
-    # (temporal_step / 2 + temporal_step * i, scores_list[i])
     action_scores = tem_output[0, :]
     scores_length = len(action_scores)
     video_extend = int(scores_length / 4 + 10)
@@ -407,7 +406,6 @@ class PEM(torch.nn.Module):
     def weight_init(m):
         if isinstance(m, nn.Conv2d):
             init.xavier_uniform_(m.weight)
-            # init.xavier_normal(m.weight)
             init.constant(m.bias, 0)
 
     def reset_params(self):

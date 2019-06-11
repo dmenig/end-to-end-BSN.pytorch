@@ -14,13 +14,6 @@ CNN_embed_dim = {}  # latent dim extracted by 2D CNN
 CNN_embed_dim["inception"] = 1536
 CNN_embed_dim["pnasnet"] = 1536
 CNN_embed_dim["resnet18"] = 512
-res_size = 224  # encoder image size
-dropout_p = 0.0  # dropout probability
-
-# DecoderRNN architecture
-RNN_hidden_layers = 3
-RNN_hidden_nodes = 512
-RNN_FC_dim = 256
 
 
 class CNNEncoder(nn.Module):
