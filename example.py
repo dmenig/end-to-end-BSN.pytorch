@@ -37,7 +37,7 @@ inputs = (
 raw_targets = [[[666, 0.2, 0.7]], []]
 
 # raw_targets contains the detections for each video of the batch
-# raw_targets = [[[class, t_start_t_end] for (class_ t_start, t_end) in video.metadata] for video in batch]
+# raw_targets = [[[class, t_start, t_end] for (class_ t_start, t_end) in video.metadata] for video in batch]
 # where t_start, t_end are in [0, 1] (normalized by the sample_duration)
 
 
