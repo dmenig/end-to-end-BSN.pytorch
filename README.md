@@ -16,7 +16,7 @@ pretrainedmodels (https://github.com/Cadene/pretrained-models.pytorch)
 There's no DataLoader in this. You just have to be able to carry your detection labels to the model with the form exposed in the `example.py` : 
 ```
 # raw_targets contains the detections for each video of the batch
-# raw_targets = [[[class, t_start_t_end] for (class_ t_start, t_end) in video.metadata] for video in batch]
+# raw_targets = [[[class, t_start, t_end] for (class_ t_start, t_end) in video.metadata] for video in batch]
 # where t_start, t_end are in [0, 1] (normalized by the sample_duration)
 ```
 
