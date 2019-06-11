@@ -31,6 +31,6 @@ I also wanted to add a classification part, which you can remove to retrieve the
 
 This git holds the architecture of the network exposed in this paper: https://arxiv.org/pdf/1806.02964.pdf
 
-There was already some pytorch code release, but I didn't feel like it could be easily usable for any other dataset the THUMOS14 and ActivityNet https://github.com/wzmsltw/BSN-boundary-sensitive-network. Thank you guys anyway for the great work.
+There was already some pytorch code release, but I didn't feel like it could be easily usable for any other dataset the THUMOS14 and ActivityNet https://github.com/wzmsltw/BSN-boundary-sensitive-network. Thank you anyway for the great work.
 
 So I took it, reworked it and here you have it.
