@@ -1,5 +1,4 @@
-# bsn.pytorch
-End-to-End Boundary Sensitive Network in Pytorch
+# End-to-End Boundary Sensitive Network in Pytorch
 
 This git holds the architecture of the network exposed in this paper: https://arxiv.org/pdf/1806.02964.pdf
 
