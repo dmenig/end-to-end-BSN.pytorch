@@ -2,7 +2,7 @@ from models.bsn import BSNNet, getIou, binarize_sequences
 from losses import TEM_loss_function, PEM_loss_function, correctLogits
 
 
-sample_duration = 10
+sample_duration = 100
 use_gpu = False
 batch_size = 2
 image_size = 224
