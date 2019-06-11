@@ -24,6 +24,7 @@ model.to("cuda" if use_gpu else "cpu")
 import torch
 import numpy as np
 
+# inputs would be a 5d batch of videos
 inputs = (
     torch.from_numpy(
         np.random.choice(
@@ -34,11 +35,11 @@ inputs = (
     .add(-110)
     .div(40.0)
 )
-raw_targets = [[[666, 0.2, 0.7]], []]
-
 # raw_targets contains the detections for each video of the batch
 # raw_targets = [[[class, t_start, t_end] for (class_ t_start, t_end) in video.metadata] for video in batch]
 # where t_start, t_end are in [0, 1] (normalized by the sample_duration)
+
+raw_targets = [[[666, 0.2, 0.7]], []]
 
 
 
