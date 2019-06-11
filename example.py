@@ -49,12 +49,12 @@ label_action, label_start, label_end = binarize_sequences(raw_targets, sample_du
 tem_output, pem_output, logits, proposals = model(inputs)
 match_ious, match_labels, matches = getIou(proposals, raw_targets, use_gpu=use_gpu)
 # correct proposals
-loss_dict = TEM_loss_function(
+loss_tem = TEM_loss_function(
     label_action, label_start, label_end, tem_output, use_gpu=use_gpu
 )
 
 ## loss for optimizer
-loss_total = loss_dict["cost"] + loss_iou
+loss_total = loss_tem["cost"] + loss_iou
 
 
 # correct iou predictions of proposals
@@ -65,7 +65,7 @@ if new_logits.size(0) != 0:
     loss_classif = criterions["classif"](new_logits, match_labels)
     total_loss += classif_loss
 
-loss_total_untrimmed = loss_dict["cost"]
-loss_action = loss_dict["loss_action"]
-loss_start = loss_dict["loss_start"]
-loss_end = loss_dict["loss_end"]
+loss_total_untrimmed = loss_tem["cost"]
+loss_action = loss_tem["loss_action"]
+loss_start = loss_tem["loss_start"]
+loss_end = loss_tem["loss_end"]
