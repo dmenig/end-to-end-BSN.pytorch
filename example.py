@@ -19,7 +19,8 @@ model = BSNNet(
 
 model.to("cuda" if use_gpu else "cpu")
 
-classification_criterion = nn.CrossEntropyLoss() # for softmax loss on classification
+# criterion for softmax loss on classification
+classification_criterion = nn.CrossEntropyLoss().to("cuda" if use_gpu else "cpu")
 
 ### Define inputs
 
