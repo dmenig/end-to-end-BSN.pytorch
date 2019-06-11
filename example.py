@@ -19,6 +19,8 @@ model = BSNNet(
 
 model.to("cuda" if use_gpu else "cpu")
 
+classification_criterion = nn.CrossEntropyLoss() # for softmax loss on classification
+
 ### Define inputs
 
 import torch
@@ -62,7 +64,7 @@ loss_iou = PEM_loss_function(pem_output, match_ious, use_gpu=use_gpu)
 # only correct labels of "right" proposals
 new_logits = correctLogits(logits, matches, use_gpu=use_gpu)
 if new_logits.size(0) != 0:
-    loss_classif = criterions["classif"](new_logits, match_labels)
+    loss_classif = classification_criterion(new_logits, match_labels)
     total_loss += classif_loss
 
 loss_total_untrimmed = loss_tem["cost"]
