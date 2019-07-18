@@ -66,7 +66,7 @@ loss_iou = PEM_loss_function(pem_output, match_ious, use_gpu=use_gpu)
 new_logits = correctLogits(logits, matches, use_gpu=use_gpu)
 if new_logits.size(0) != 0:
     loss_classif = classification_criterion(new_logits, match_labels)
-    total_loss += classif_loss
+    loss_total += classif_loss
 
 loss_total_untrimmed = loss_tem["cost"]
 loss_action = loss_tem["loss_action"]
